@@ -1,3 +1,10 @@
+
+
+
+<!-- LAB SEVEN LOOK AT IT YOU SHMECKLE GET WITH IT BRO -->
+
+
+
 <!DOCTYPE HTML>
 
 <html lang="en">
@@ -16,27 +23,28 @@
         <script src="https://kit.fontawesome.com/808c061740.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-        <title>W3D Lab1</title>
+        <title>218631 3dapps Assignment</title>
     </head>
 
     <body>
     
     <!-- Header (Navbar) -->
-    <div id="nav-placeholder"></div>
+    <header id="nav-placeholder"></header>
     <script>
         $.get("nav.html", function(data){ $("#nav-placeholder").replaceWith(data); });
     </script>
 
     <br>    
     <!-- Main Body -->
-    <div class="container">
+    <div class="wrapper">
+    <main class="container">
         <h1>HOME PAGE</h1>
 
         <br>
 
-        <div class="row">
+        <div class="col">
             <!-- Coca Cola -->
-            <div class="col-sm-4" style="background-color:lavenderblush;">
+            <div class="row-xs-12">
                 <div class="card">
                     <a href="#">
                         <img class="card-img-top img-fluid img-thumbnail" src="assets/images/coca_cola.jpg">
@@ -46,7 +54,7 @@
                         <p class="card-text">
                             <p>
                             It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, he carried it a few doors down to Jacobs' Pharmacy. Here, the mixture was combined with carbonated water and sampled by customers who all agreed - this new drink was something special!...
-                        </p>
+                            </p>
                             <a href="#" class="btn btn-primary">Find out more ...</a>
                         </p>
                     </div>
@@ -54,7 +62,7 @@
             </div>
             
             <!-- Sprite -->
-            <div class="col-sm-4" style="background-color:lightgrey;">
+            <div class="row-xs-12">
                 <div class="card">
                     <a href="#">
                         <img class="card-img-top img-fluid img-thumbnail" src="assets/images/sprite.jpg">
@@ -73,7 +81,7 @@
             </div>
 
             <!-- Dr Pepper -->
-            <div class="col-sm-4" style="background-color:lavender;">
+            <div class="row-xs-12">
                 <div class="card">
                     <a href="#">
                         <img class="card-img-top img-fluid img-thumbnail" src="assets/images/dr_pepper.jpg">
@@ -101,6 +109,7 @@
         <script src="js/popper.min.js"></script>-->
         <script src="js/bootstrap.js"></script>
 
+    </main>
     </div>
 
     <br>
