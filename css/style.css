@@ -1,0 +1,6 @@
+footer, #footer-placeholder, .footer {
+    padding: 20px;
+    min-height: 100%;
+    margin: 0 auto -50px !important;
+    height: 50px;
+}
