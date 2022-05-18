@@ -5,7 +5,7 @@ class Model {
 
 	public function __construct() {
         // CONNECTING TO DATABASE
-        $dsn = Config::DATABASE_PATH;
+        $dsn = DATABASE_PATH;
         $user = 'user';
         $pass = 'password';
         $options = [
@@ -14,11 +14,7 @@ class Model {
 		];
 
         try {
-            $pdo = new PDO("sqlite:".$dsn, $user, $pass)
-            foreach ($options as $k => $v)
-            {
-                $pdo->setAttribute($k,$v);
-            }
+            $pdo = new PDO("sqlite:".$dsn, $user, $pass, $options);
         }
         catch (PDOException $e) {
             print new Exception($e->getMessage());
