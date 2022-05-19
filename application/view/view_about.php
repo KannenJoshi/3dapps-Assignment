@@ -1,12 +1,20 @@
 <!DOCTYPE HTML>
 
-<!-- Header -->
-<?php require "header.html"; ?>
+<html lang="en">
+<body>
 
-    <h1>ABOUT</h1>
+    <!-- Header -->
+    <?php require "header.html"; ?>
+
+        <h1>ABOUT</h1>
+        <br>
+
+        
+
     <br>
+    <!-- Footer -->
+    <?php require "footer.html";
+    ?>
 
-
-<br>
-<!-- Footer -->
-<?php require "footer.html"; ?>
+</body>
+</html>

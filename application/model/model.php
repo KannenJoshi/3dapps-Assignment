@@ -29,49 +29,26 @@ class Model {
 
     public function getBrands() {
         //Get from BRANDS table, with FK for each
-        return $this->pdo->prepare("SELECT * FROM BRANDS")->execute()->fetchAll(PDO::FETCH_ASSOC);
+        $res = json_encode($this->pdo->prepare("SELECT * FROM BRANDS")->execute()->fetchAll(PDO::FETCH_ASSOC));
+        $this->pdo = NULL;
+        return $res;
     }
 
     public function getModelData() {
-        return $this->pdo->prepare("SELECT * FROM MODELS")->execute()->fetchAll(PDO::FETCH_ASSOC);
+        $res =  json_encode($this->pdo->prepare("SELECT * FROM MODELS")->execute()->fetchAll(PDO::FETCH_ASSOC));
+        $this->pdo = NULL;
+        return $res;
     }
 
-    public function getDisplayCards($page) {
-        $sql = "SELECT * FROM DISPLAY_CARDS dc LEFT JOIN BRANDS b ON b.id = dc.brand_id WHERE page = :page";
+    public function getDisplayCards() {
+        $sql = "SELECT * FROM HOME h LEFT JOIN BRANDS b ON b.id = h.brand_id";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(["page"=>$page]);
+        $stmt->execute();
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $results;
+        $res =  json_encode($results);
+        $this->pdo = NULL;
+        return $res;
     }
-
-
-
-    // public function dbCreateTables() {
-    //     try {
-    //         $this->pdo->exec("
-    //             CREATE TABLE IF NOT EXISTS Brands (
-    //                 id INTEGER UNSIGNED UNIQUE AUTO_INCREMENT PRIMARY KEY,
-    //                 name TEXT UNIQUE
-    //             )"
-    //         );
-
-    //         $this->pdo->exec("
-    //             CREATE TABLE IF NOT EXISTS Model_3D (
-    //                 id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    //                 brand_id INTEGER,
-    //                 FOREIGN KEY("brand_id") REFERENCES "BRANDS"("id"),
-    //                 x3dModelTitle TEXT,
-    //                 x3dCreationMethod TEXT,
-    //                 modelTitle TEXT,
-    //                 modelSubtitle TEXT,
-    //                 modelDescription TEXT
-    //             )"
-    //         );
-    //     }
-    //     catch (PDOException $e) {
-    //         print new Exception($e->getMessage());
-    //     }
-    // }
 
 }
 ?>

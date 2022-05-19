@@ -10,5 +10,3 @@ $pageURI =substr($pageURI,strrpos($pageURI,'index.php')+10);
 	else
 		new Controller($pageURI);
 ?>
-
-?>
