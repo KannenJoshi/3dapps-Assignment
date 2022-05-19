@@ -46,8 +46,8 @@ class Controller {
         $this->load->view('view_model_bottle');
     }
 
-    public function cup() {
-        $this->load->view('view_model_cup');
+    public function bottle2() {
+        $this->load->view('view_model_bottle2');
     }
 
     public function contacts() {
