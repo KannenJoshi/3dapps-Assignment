@@ -39,6 +39,7 @@ class Controller {
     }
 
     public function can() {
+        // $this->load->view('view_model_can', ['data' => [] ]);
         $this->load->view('view_model_can');
     }
 
@@ -48,6 +49,10 @@ class Controller {
 
     public function bottle2() {
         $this->load->view('view_model_bottle2');
+    }
+
+    public function bottle3() {
+        $this->load->view('view_model_bottle3');
     }
 
     public function contacts() {
