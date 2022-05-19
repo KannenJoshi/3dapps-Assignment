@@ -13,7 +13,7 @@
         <h1>CONTACTS</h1>
         <br>
 
-        
+        <p>kj265@sussex.ac.uk</p>
 
     <br>
     <!-- Footer -->
