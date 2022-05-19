@@ -14,21 +14,34 @@ class Model {
 		];
 
         try {
-            $pdo = new PDO("sqlite:".$dsn, $user, $pass, $options);
+            $this->pdo = new PDO("sqlite:".$dsn);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            // foreach ($options as $k=>$v) {
+            //     $this->pdo->setAttribute($k,$v);
+            // }
         }
         catch (PDOException $e) {
-            print new Exception($e->getMessage());
+            echo new Exception($e->getMessage());
         }
 	}
 
 
     public function getBrands() {
         //Get from BRANDS table, with FK for each
-        return $this->pdo->query("SELECT * FROM BRANDS")->fetchAll();
+        return $this->pdo->prepare("SELECT * FROM BRANDS")->execute()->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getModelData() {
-        return $this->pdo->query("SELECT * FROM MODELS")->fetchAll();
+        return $this->pdo->prepare("SELECT * FROM MODELS")->execute()->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getDisplayCards($page) {
+        $sql = "SELECT * FROM DISPLAY_CARDS dc LEFT JOIN BRANDS b ON b.id = dc.brand_id WHERE page = :page";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(["page"=>$page]);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
     }
 
 

@@ -1,0 +1,18 @@
+<?php
+            if (count($data) > 0) {
+                foreach ($data as $i => $card) {
+                    echo '<div class="card">
+                        <a href="'.$card["imgURL"].'">
+                            <img class="card-img-top img-fluid img-thumbnail" src="'.$card["imgURL"].'">
+                        </a>
+                        <div class="card-body">
+                            <h3 class="card-title">'.$card["name"].'</h3>
+                            <p class="card-text">
+                                <p>'.$card["description"].'</p>
+                                <a href="'.$card["gotoURL"].'" class="btn btn-primary">Find out more ...</a>
+                            </p>
+                        </div>
+                    </div>';
+                }
+            }           
+        ?>
