@@ -13,7 +13,9 @@
         <h1>CONTACTS</h1>
         <br>
 
-        <p>kj265@sussex.ac.uk</p>
+        <p>Email: kj265@sussex.ac.uk</p>
+        <a href="https://github.com/KannenJoshi/3dapps-assignment/"><p>GitHub</p></a>
+        <a href="https://github.com/KannenJoshi/3dapps-assignment/tree/master/assets/x3d/"><p>GitHub - Models</p></a>
 
     <br>
     <!-- Footer -->
