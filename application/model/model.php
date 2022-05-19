@@ -6,8 +6,6 @@ class Model {
 	public function __construct() {
         // CONNECTING TO DATABASE
         $dsn = DATABASE_PATH;
-        $user = 'user';
-        $pass = 'password';
         $options = [
 			PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, //turn on errors in the form of exceptions
 			PDO::ATTR_EMULATE_PREPARES   => false, // turn off emulation mode for "real" prepared statements

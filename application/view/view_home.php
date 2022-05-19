@@ -13,7 +13,7 @@
 
         <div id="cards" class="col">
             <script>
-                $.getJSON('application/model/model_home.php', function(json) {}).fail(console.log('oof'));
+                $.getJSON('application/model/model_home.php', function(json) {}));
                 
                 function cards(json) {
                     console.log(json);

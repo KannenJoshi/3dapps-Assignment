@@ -19,7 +19,7 @@
         <div class="row">
             <x3d id="model" class="col-sm" width='100%' height='100%' name='x3dBlock'> 
                 <scene>
-                    <inline nameSpaceName="model" mapDEFToID="true" onclick="animateModel();" url="assets/x3d/can.x3d"> </inline>
+                    <inline nameSpaceName="model" mapDEFToID="true" onclick="animateModel();" url="assets/x3d/bottle.x3d"> </inline>
                 </scene>
             </x3d>  
 
