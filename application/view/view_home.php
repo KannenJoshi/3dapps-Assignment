@@ -13,9 +13,15 @@
 
         <div id="cards" class="col">
             <script>
-                $.getJSON('application/model/model_home.php', function(json) {
-                console.log(json);
-                $.each(json, function(card) {
+                $.getJSON('application/model/model_home.php', function(json) {}).fail(console.log('oof'));
+                
+                function cards(json) {
+                    console.log(json);
+                    json.forEach(makecard);
+                }
+
+                function makecard(card)
+                {
                     var html =  '<div class="card">'
                     html +=     '   <a href="'+card.imgURL+'">';
                     html +=     '       <img class="card-img-top img-fluid img-thumbnail" src="'+card.imgURL+'">';
@@ -29,9 +35,11 @@
                     html +=     '   </div>';
                     html +=     '</div>';
                     $("#cards").append(html);
-                })
-            }).fail(console.log('oof'));
+                }
             </script>
+            <?php
+                echo "<script> cards($data) </script>";
+            ?>
         </div>
 
     <br>

@@ -31,7 +31,7 @@ class Controller {
     }
 
     public function home() {
-        $this->load->view('view_home');
+        $this->load->view('view_home', ['data' => $this->model->getDisplayCards()]);
     }
 
     public function about() {
